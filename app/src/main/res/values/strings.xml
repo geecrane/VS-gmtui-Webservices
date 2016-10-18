@@ -3,4 +3,6 @@
     <string name="task1">Task 1</string>
     <string name="task2">Task 2</string>
     <string name="task3">Task 3</string>
+    <string name="temperature">Temperature: </string>
+    <string name="loading">loading...</string>
 </resources>

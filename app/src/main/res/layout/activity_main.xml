@@ -15,7 +15,8 @@
         android:id="@+id/btnTask1"
         android:text="@string/task1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:onClick="onClickTask" />
 
     <Button
         android:id="@+id/btnTask2"
