@@ -6,14 +6,20 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import ch.ethz.inf.vs.a2.sensor.JsonSensor;
 import ch.ethz.inf.vs.a2.sensor.RawHttpSensor;
 import ch.ethz.inf.vs.a2.sensor.SensorListener;
+import ch.ethz.inf.vs.a2.sensor.TextSensor;
 
 public class RestClientActivity extends AppCompatActivity implements SensorListener {
     private RawHttpSensor rawSensor = new RawHttpSensor();
+    private TextSensor textSensor = new TextSensor();
+    private JsonSensor jsonSensor = new JsonSensor();
     @Override
     protected void onDestroy() {
-        rawSensor.unregisterListener(this);
+        //rawSensor.unregisterListener(this);
+        //textSensor.unregisterListener(this);
+        jsonSensor.unregisterListener(this);
 
         super.onDestroy();
     }
@@ -23,8 +29,14 @@ public class RestClientActivity extends AppCompatActivity implements SensorListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rest_client);
 
-        rawSensor.registerListener(this);
-        rawSensor.getTemperature();
+        //rawSensor.registerListener(this);
+        //rawSensor.getTemperature();
+        //textSensor.registerListener(this);
+        //textSensor.getTemperature();
+        jsonSensor.registerListener(this);
+        jsonSensor.getTemperature();
+
+
     }
 
     @Override

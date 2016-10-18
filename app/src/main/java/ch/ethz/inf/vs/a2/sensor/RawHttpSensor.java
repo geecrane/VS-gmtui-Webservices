@@ -1,6 +1,5 @@
 package ch.ethz.inf.vs.a2.sensor;
 
-import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,37 +15,34 @@ import ch.ethz.inf.vs.a2.http.HttpRawRequestImpl;
  */
 
 public class RawHttpSensor extends AbstractSensor {
-    private final int PORT = 8081;
-    private final String HOST = "vslab.inf.ethz.ch";
-    private final String PATH = "/sunspots/Spot1/sensors/temperature";
+    public static final int PORT = 8081;
+    public static final String HOST = "vslab.inf.ethz.ch";
+    public static final String PATH = "/sunspots/Spot1/sensors/temperature";
 
     @Override
     public String executeRequest() throws Exception  {
+        StringBuffer response = new StringBuffer();
+
         HttpRawRequest req = new HttpRawRequestImpl();
         String rawReq = req.generateRequest(HOST, PORT, PATH);
-        BufferedReader br;
-        String response = "";
-
 
         Socket s = new Socket(HOST, PORT);
         PrintWriter pw = new PrintWriter(s.getOutputStream());
         pw.print(rawReq);
         pw.flush();
 
-        br = new BufferedReader(new InputStreamReader(s.getInputStream()));
+        BufferedReader in = new BufferedReader(new InputStreamReader(s.getInputStream()));
 
-        String t;
-        while ((t = br.readLine()) != null) {
-            Log.d("HTTP_RESPONSE", t);
-            response +=  t + " \r\n";
+        String inputLine;
+        while ((inputLine = in.readLine()) != null) {
+            response.append(inputLine);
         }
 
-        br.close();
+        in.close();
         pw.close();
         s.close();
 
-
-        return response;
+        return response.toString();
     }
 
     @Override
