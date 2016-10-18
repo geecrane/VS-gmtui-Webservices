@@ -1,4 +1,4 @@
-package ch.ethz.inf.vs.a2;
+package ch.ethz.inf.vs.a2.sensor;
 
 import ch.ethz.inf.vs.a2.sensor.AbstractSensor;
 
@@ -6,7 +6,7 @@ import ch.ethz.inf.vs.a2.sensor.AbstractSensor;
  * Created by george on 18.10.16.
  */
 
-public class RawHttpSensor extends AbstractSensor {
+public class JsonSensor extends AbstractSensor {
     @Override
     public String executeRequest() throws Exception {
         return null;

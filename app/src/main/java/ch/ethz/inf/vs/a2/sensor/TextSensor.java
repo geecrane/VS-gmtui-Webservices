@@ -1,4 +1,4 @@
-package ch.ethz.inf.vs.a2;
+package ch.ethz.inf.vs.a2.sensor;
 
 import ch.ethz.inf.vs.a2.sensor.AbstractSensor;
 
