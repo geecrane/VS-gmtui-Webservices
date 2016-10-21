@@ -176,7 +176,7 @@ public class ServerService extends Service {
                 vibrate();
                return "vibrating".getBytes();
             }
-            else if(route.equals("flashlight")){
+            else if(route.equals("sound")){
                 take_photo();
                 return "sound!".getBytes();
             }
@@ -207,7 +207,7 @@ public class ServerService extends Service {
             }
             html += "<p>";
             html += "<li><a href=\"./vibrator\"> vibrate </a></li>";
-            html += "<li><a href=\"./flashlight\"> flashlight </a></li>";
+            html += "<li><a href=\"./sound\"> sound </a></li>";
             html += htmlEnd;
            return html;
         }
