@@ -10,6 +10,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import ch.ethz.inf.vs.a2.http.RemoteServerConfiguration;
 import ch.ethz.inf.vs.a2.sensor.AbstractSensor;
 
 /**
@@ -21,7 +22,7 @@ public class JsonSensor extends AbstractSensor {
 
     @Override
     public String executeRequest() throws Exception {
-        URL obj = new URL("http://"+RawHttpSensor.HOST+":"+RawHttpSensor.PORT+RawHttpSensor.PATH);
+        URL obj = new URL("http://"+ RemoteServerConfiguration.HOST+":"+RemoteServerConfiguration.REST_PORT+RemoteServerConfiguration.REST_PATH);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 
         con.setRequestMethod("GET");

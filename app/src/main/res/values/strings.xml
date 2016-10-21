@@ -1,8 +1,10 @@
 <resources>
-    <string name="app_name">VS gmtui Webservices</string>
+    <string name="app_name">Web Services</string>
     <string name="task1">Task 1</string>
     <string name="task2">Task 2</string>
     <string name="task3">Task 3</string>
     <string name="temperature">Temperature: </string>
     <string name="loading">loading...</string>
+    <string name="turn_off">Shut off</string>
+    <string name="turn_on">turn on</string>
 </resources>

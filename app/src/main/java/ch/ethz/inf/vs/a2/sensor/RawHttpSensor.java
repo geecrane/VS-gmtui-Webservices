@@ -9,24 +9,22 @@ import java.net.Socket;
 
 import ch.ethz.inf.vs.a2.http.HttpRawRequest;
 import ch.ethz.inf.vs.a2.http.HttpRawRequestImpl;
+import ch.ethz.inf.vs.a2.http.RemoteServerConfiguration;
 
 /**
  * Created by george on 18.10.16.
  */
 
 public class RawHttpSensor extends AbstractSensor {
-    public static final int PORT = 8081;
-    public static final String HOST = "vslab.inf.ethz.ch";
-    public static final String PATH = "/sunspots/Spot1/sensors/temperature";
 
     @Override
     public String executeRequest() throws Exception  {
         StringBuffer response = new StringBuffer();
 
         HttpRawRequest req = new HttpRawRequestImpl();
-        String rawReq = req.generateRequest(HOST, PORT, PATH);
+        String rawReq = req.generateRequest(RemoteServerConfiguration.HOST, RemoteServerConfiguration.REST_PORT, RemoteServerConfiguration.REST_PATH);
 
-        Socket s = new Socket(HOST, PORT);
+        Socket s = new Socket(RemoteServerConfiguration.HOST, RemoteServerConfiguration.REST_PORT);
         PrintWriter pw = new PrintWriter(s.getOutputStream());
         pw.print(rawReq);
         pw.flush();
@@ -47,8 +45,7 @@ public class RawHttpSensor extends AbstractSensor {
 
     @Override
     public double parseResponse(String response) {
-        String[] matches = response.split("getterValue\">")[1].split("</");
-        return Double.parseDouble(matches[0]);
+        return Double.parseDouble(response.split("close")[1]);
 
     }
 }

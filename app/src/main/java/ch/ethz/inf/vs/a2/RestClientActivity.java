@@ -17,9 +17,9 @@ public class RestClientActivity extends AppCompatActivity implements SensorListe
     private JsonSensor jsonSensor = new JsonSensor();
     @Override
     protected void onDestroy() {
-        //rawSensor.unregisterListener(this);
+        rawSensor.unregisterListener(this);
         //textSensor.unregisterListener(this);
-        jsonSensor.unregisterListener(this);
+       // jsonSensor.unregisterListener(this);
 
         super.onDestroy();
     }
@@ -29,12 +29,12 @@ public class RestClientActivity extends AppCompatActivity implements SensorListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rest_client);
 
-        //rawSensor.registerListener(this);
-        //rawSensor.getTemperature();
+        rawSensor.registerListener(this);
+        rawSensor.getTemperature();
         //textSensor.registerListener(this);
         //textSensor.getTemperature();
-        jsonSensor.registerListener(this);
-        jsonSensor.getTemperature();
+        //jsonSensor.registerListener(this);
+        //jsonSensor.getTemperature();
 
 
     }

@@ -17,14 +17,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickTask(View v){
-
+        Intent intent;
         switch (v.getId()) {
             case R.id.btnTask1:
-                Intent intent = new Intent(this,RestClientActivity.class);
+                 intent = new Intent(this,RestClientActivity.class);
                 startActivity(intent);
                 break;
             case R.id.btnTask2: break;
-            case R.id.btnTask3: break;
+            case R.id.btnTask3:
+                intent = new Intent(this,RestServerActivity.class);
+                startActivity(intent);
+                break;
         }
     }
 

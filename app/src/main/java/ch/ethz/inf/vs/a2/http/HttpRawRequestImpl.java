@@ -13,7 +13,7 @@ public class HttpRawRequestImpl implements HttpRawRequest {
         String request = "";
         request += "GET "+path+" HTTP/1.1\r\n";
         request += "Host: " + host + ":"+port+"\r\n";
-        request += "Accept: text/html\r\n";
+        request += "Accept: text/plain\r\n";
         request += "Connection: close\r\n";
         request += "\r\n";
 
