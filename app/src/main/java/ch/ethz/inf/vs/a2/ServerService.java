@@ -110,6 +110,7 @@ public class ServerService extends Service {
         private PrintStream output;
         private String htmlStart = "<html><head></head><body><ul>";
         private String htmlEnd = "</ul></body></html>";
+        private String htmlback = "<a href=\"../\"> back </a>";
         String route;
 
         public CommThread(Socket clientSocket) {
@@ -190,14 +191,25 @@ public class ServerService extends Service {
             else if(route.equals("vibrator")){
                 // let phone vibrate
                 vibrate();
-               return "vibrating".getBytes();
+                String html = htmlStart;
+                html +="vibrating for 5 seconds<p>";
+                html +="<a href=\"./\"> again </a><p>";
+                html += htmlback;
+                html += htmlEnd;
+               return html.getBytes();
             }
             else if(route.equals("sound")){
                 // play sound
                 play_sound();
-                return "sound!".getBytes();
+                String html = htmlStart;
+                html += "sending command to play sound!<p>";
+                html += "<a href=\"./\"> again </a><p>";
+                html += htmlback;
+                html += htmlEnd;
+                return html.getBytes();
             }
             else{
+
                 return "Nothing to see here".getBytes();
             }
 
