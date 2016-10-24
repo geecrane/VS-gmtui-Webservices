@@ -40,8 +40,7 @@ public class RawHttpSensor extends AbstractSensor {
         pw.close();
         s.close();
 
-        //return response.toString();
-        return in.toString();
+        return response.toString();
     }
 
     @Override
