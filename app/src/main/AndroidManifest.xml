@@ -20,8 +20,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".RestClientActivity" />
-        <activity android:name=".RestServerActivity"></activity>
-        <service android:name=".ServerService" android:exported="false"/>
+        <activity android:name=".RestServerActivity" />
+
+        <service
+            android:name=".ServerService"
+            android:exported="false" />
+
+        <activity android:name=".SoapClientActivity"></activity>
     </application>
 
 </manifest>

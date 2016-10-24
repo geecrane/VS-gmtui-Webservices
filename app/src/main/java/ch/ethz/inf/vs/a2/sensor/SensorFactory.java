@@ -3,8 +3,8 @@ package ch.ethz.inf.vs.a2.sensor;
 import ch.ethz.inf.vs.a2.sensor.TextSensor;
 import ch.ethz.inf.vs.a2.sensor.JsonSensor;
 import ch.ethz.inf.vs.a2.sensor.RawHttpSensor;
-//import ch.ethz.inf.vs.a2.sensor.SoapSensor;
-//import ch.ethz.inf.vs.a2.sensor.XmlSensor;
+import ch.ethz.inf.vs.a2.sensor.SoapSensor;
+import ch.ethz.inf.vs.a2.sensor.XmlSensor;
 
 
 public abstract class SensorFactory {
@@ -23,10 +23,10 @@ public abstract class SensorFactory {
 			return new JsonSensor();
 		case XML:
 			// return Sensor implementation using application/xml representation
-			//return new XmlSensor();
+			return new XmlSensor();
 		case SOAP:
 			// return Sensor implementation using a SOAPObject
-			//return new SoapSensor();
+			return new SoapSensor();
 		default:
 			return null;
 		}

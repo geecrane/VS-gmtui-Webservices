@@ -7,4 +7,7 @@
     <string name="loading">loading...</string>
     <string name="turn_off">Shut off</string>
     <string name="turn_on">turn on</string>
+    <string name="temperatureL">Libary Temperature:</string>
+    <string name="temperatureM">Manual Temperature:</string>
+    <string name="ready">-</string>
 </resources>
