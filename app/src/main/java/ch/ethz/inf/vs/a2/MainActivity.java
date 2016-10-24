@@ -23,7 +23,10 @@ public class MainActivity extends AppCompatActivity {
                  intent = new Intent(this,RestClientActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.btnTask2: break;
+            case R.id.btnTask2:
+                intent = new Intent(this,SoapClientActivity.class);
+                startActivity(intent);
+                break;
             case R.id.btnTask3:
                 intent = new Intent(this,RestServerActivity.class);
                 startActivity(intent);

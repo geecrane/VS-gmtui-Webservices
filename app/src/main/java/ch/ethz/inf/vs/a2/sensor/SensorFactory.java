@@ -8,7 +8,6 @@ import ch.ethz.inf.vs.a2.sensor.XmlSensor;
 
 
 public abstract class SensorFactory {
-	//TODO: uncomment XmlSensor and SoapSensor after task 2 is complete
 
 	public static Sensor getInstance(Type type) {
 		switch (type) {
